@@ -1,0 +1,17 @@
+--------------------
+title: "HW I"
+author: Pavithra Srinivasan
+date: September 20, 2023
+output: github_document
+--------------------
+
+```{r, setup}
+library(moderndive)
+library(tidyverse)
+```
+
+Loading the dataset
+```{r}
+data("early_january_weather")
+```
+
