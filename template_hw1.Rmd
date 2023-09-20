@@ -28,4 +28,18 @@ ncol(early_january_weather)
 ## Using pull to take the mean of the temp. 
 mean(pull(early_january_weather, temp))
 ```
+Creating a scatter plot:
 
+```{r}
+plot_df = tibble(
+  x = "time_hour",
+  y = "temp"
+)
+ggplot(early_january_weather, aes(x = time_hour, y = temp, color = humid)) + geom_point()
+
+```
+The scatter plot shows a positive correlation between tempeature and humidity. As temperature increases, the humidity also increases with it. There is a positive correlation with time and temperature. Temperatures rise through during the day and decrease at night time by the hour. 
+
+ggsave("scatter_plot.pdf", height = 4, width = 4)
+
+## Problem 2
