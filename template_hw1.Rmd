@@ -48,6 +48,8 @@ ggsave("scatter_plot.pdf", height = 4, width = 4)
 
 ## Problem 2
 
+Creating a data-frame
+
 ```{r}
 plot_df = tibble(
   sample = rnorm(10),
@@ -56,8 +58,17 @@ plot_df = tibble(
   vec_factor = factor(c("low", "low", "low", "avg", "avg", "avg", "avg", "high", "high", "high"))
 )
 ```
+Taking the mean of each element of the data set:
 
+```{r}
+mean(pull(early_january_weather, temp))
+mean(pull(early_january_weather, dewp))
+mean(pull(early_january_weather, humid))
+mean(pull(early_january_weather, wind_dir))
+mean(pull(early_january_weather, wind_speed))
 
+```
+Taking the mean works for all the elements except for wind direction. 
 
 
 
