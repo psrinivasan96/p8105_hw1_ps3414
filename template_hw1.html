@@ -355,16 +355,16 @@ display: none;
 <table>
 <tbody>
 <tr class="odd">
-<td align="left">title: “HW I”</td>
+<td>title: “P8105 - HW I”</td>
 </tr>
 <tr class="even">
-<td align="left">author: Pavithra Srinivasan</td>
+<td>author: Pavithra Srinivasan</td>
 </tr>
 <tr class="odd">
-<td align="left">Date: September 20, 2023</td>
+<td>date: September 20, 2023</td>
 </tr>
 <tr class="even">
-<td align="left">output: github_document</td>
+<td>output: github_document</td>
 </tr>
 </tbody>
 </table>
@@ -380,8 +380,39 @@ library(tidyverse)</code></pre>
 ## ✖ dplyr::filter() masks stats::filter()
 ## ✖ dplyr::lag()    masks stats::lag()
 ## ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
-<p>Loading the dataset</p>
+<p>Loading the data set</p>
 <pre class="r"><code>data(&quot;early_january_weather&quot;)</code></pre>
+<div id="problem-1" class="section level2">
+<h2>Problem 1:</h2>
+<p>Data set description: The sample size is 358, and describes the
+temperature, humidity, and wind pattern/speed during early January in
+the year 2013.</p>
+<pre class="r"><code>## Size of the data set
+early_january_weather</code></pre>
+<pre><code>## # A tibble: 358 × 15
+##    origin  year month   day  hour  temp  dewp humid wind_dir wind_speed
+##    &lt;chr&gt;  &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;      &lt;dbl&gt;
+##  1 EWR     2013     1     1     1  39.0  26.1  59.4      270      10.4 
+##  2 EWR     2013     1     1     2  39.0  27.0  61.6      250       8.06
+##  3 EWR     2013     1     1     3  39.0  28.0  64.4      240      11.5 
+##  4 EWR     2013     1     1     4  39.9  28.0  62.2      250      12.7 
+##  5 EWR     2013     1     1     5  39.0  28.0  64.4      260      12.7 
+##  6 EWR     2013     1     1     6  37.9  28.0  67.2      240      11.5 
+##  7 EWR     2013     1     1     7  39.0  28.0  64.4      240      15.0 
+##  8 EWR     2013     1     1     8  39.9  28.0  62.2      250      10.4 
+##  9 EWR     2013     1     1     9  39.9  28.0  62.2      260      15.0 
+## 10 EWR     2013     1     1    10  41    28.0  59.6      260      13.8 
+## # ℹ 348 more rows
+## # ℹ 5 more variables: wind_gust &lt;dbl&gt;, precip &lt;dbl&gt;, pressure &lt;dbl&gt;,
+## #   visib &lt;dbl&gt;, time_hour &lt;dttm&gt;</code></pre>
+<pre class="r"><code>nrow(early_january_weather)</code></pre>
+<pre><code>## [1] 358</code></pre>
+<pre class="r"><code>ncol(early_january_weather)</code></pre>
+<pre><code>## [1] 15</code></pre>
+<pre class="r"><code>## Using pull to take the mean of the temp. 
+mean(pull(early_january_weather, temp))</code></pre>
+<pre><code>## [1] 39.58212</code></pre>
+</div>
 
 
 

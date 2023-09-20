@@ -1,17 +1,31 @@
 --------------------
-title: "HW I"
+title: "P8105 - HW I"
 author: Pavithra Srinivasan
 date: September 20, 2023
 output: github_document
 --------------------
 
-```{r, setup}
+```{r,setup}
 library(moderndive)
 library(tidyverse)
 ```
-
-Loading the dataset
+Loading the data set
 ```{r}
 data("early_january_weather")
+
+```
+## Problem 1: 
+
+Data set description: The sample size is 358, and describes the temperature, 
+humidity, and wind pattern/speed during early January in the year 2013. 
+
+```{r}
+## Size of the data set
+early_january_weather
+nrow(early_january_weather)
+ncol(early_january_weather)
+
+## Using pull to take the mean of the temp. 
+mean(pull(early_january_weather, temp))
 ```
 
