@@ -428,13 +428,28 @@ hour.</p>
 </div>
 <div id="problem-2" class="section level2">
 <h2>Problem 2</h2>
-<p>Creating a dataframe</p>
+<p>Creating a data-frame</p>
 <pre class="r"><code>plot_df = tibble(
   sample = rnorm(10),
   sample_ii = sample &gt; 0,
   vec_character_length = c(&quot;1&quot;, &quot;2&quot;, &quot;3&quot;, &quot;4&quot;, &quot;5&quot;, &quot;6&quot;, &quot;7&quot;, &quot;8&quot;, &quot;9&quot;, &quot;10&quot;),
   vec_factor = factor(c(&quot;low&quot;, &quot;low&quot;, &quot;low&quot;, &quot;avg&quot;, &quot;avg&quot;, &quot;avg&quot;, &quot;avg&quot;, &quot;high&quot;, &quot;high&quot;, &quot;high&quot;))
 )</code></pre>
+<p>Taking the mean of each element of the data frame:</p>
+<pre class="r"><code>mean(plot_df[[&quot;sample&quot;]])</code></pre>
+<pre><code>## [1] 0.5262241</code></pre>
+<pre class="r"><code>mean(plot_df[[&quot;sample_ii&quot;]])</code></pre>
+<pre><code>## [1] 0.8</code></pre>
+<pre class="r"><code>mean(plot_df[[&quot;vec_character_length&quot;]])</code></pre>
+<pre><code>## Warning in mean.default(plot_df[[&quot;vec_character_length&quot;]]): argument is not
+## numeric or logical: returning NA</code></pre>
+<pre><code>## [1] NA</code></pre>
+<pre class="r"><code>mean(plot_df[[&quot;vec_factor&quot;]])</code></pre>
+<pre><code>## Warning in mean.default(plot_df[[&quot;vec_factor&quot;]]): argument is not numeric or
+## logical: returning NA</code></pre>
+<pre><code>## [1] NA</code></pre>
+<p>``<code>Taking the mean works for all the elements except for</code>vector
+character length<code>and</code>vector factor`.</p>
 </div>
 
 

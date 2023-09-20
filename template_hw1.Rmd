@@ -58,17 +58,17 @@ plot_df = tibble(
   vec_factor = factor(c("low", "low", "low", "avg", "avg", "avg", "avg", "high", "high", "high"))
 )
 ```
-Taking the mean of each element of the data set:
 
+Taking the mean of each element of the data frame:
 ```{r}
-mean(pull(early_january_weather, temp))
-mean(pull(early_january_weather, dewp))
-mean(pull(early_january_weather, humid))
-mean(pull(early_january_weather, wind_dir))
-mean(pull(early_january_weather, wind_speed))
+mean(plot_df[["sample"]])
+mean(plot_df[["sample_ii"]])
+mean(plot_df[["vec_character_length"]])
+mean(plot_df[["vec_factor"]])
+```
 
 ```
-Taking the mean works for all the elements except for wind direction. 
+Taking the mean works for all the elements except for `vector character length` and `vector factor`. 
 
 
 
