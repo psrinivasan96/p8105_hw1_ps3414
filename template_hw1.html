@@ -437,9 +437,9 @@ hour.</p>
 )</code></pre>
 <p>Taking the mean of each element of the data frame:</p>
 <pre class="r"><code>mean(plot_df[[&quot;sample&quot;]])</code></pre>
-<pre><code>## [1] 0.5262241</code></pre>
+<pre><code>## [1] -0.3183963</code></pre>
 <pre class="r"><code>mean(plot_df[[&quot;sample_ii&quot;]])</code></pre>
-<pre><code>## [1] 0.8</code></pre>
+<pre><code>## [1] 0.4</code></pre>
 <pre class="r"><code>mean(plot_df[[&quot;vec_character_length&quot;]])</code></pre>
 <pre><code>## Warning in mean.default(plot_df[[&quot;vec_character_length&quot;]]): argument is not
 ## numeric or logical: returning NA</code></pre>
@@ -448,8 +448,29 @@ hour.</p>
 <pre><code>## Warning in mean.default(plot_df[[&quot;vec_factor&quot;]]): argument is not numeric or
 ## logical: returning NA</code></pre>
 <pre><code>## [1] NA</code></pre>
-<p>``<code>Taking the mean works for all the elements except for</code>vector
-character length<code>and</code>vector factor`.</p>
+<p>Taking the mean works for all the elements except for
+<code>vector character length</code> and
+<code>vector factor</code>because they are character variables and not
+numeric. .</p>
+<p>Writing a code chunk using as.numeric to convert character variables
+into numeric.</p>
+<pre class="r"><code>logical = as.numeric(plot_df[[&quot;sample&quot;]])
+character = as.numeric(plot_df[[&quot;vec_character_length&quot;]])
+Factor = as.numeric(plot_df[[&quot;vec_factor&quot;]])</code></pre>
+<p>Taking the mean of them again to test if the as.numeric function
+worked:</p>
+<pre class="r"><code>mean(logical)</code></pre>
+<pre><code>## [1] -0.3183963</code></pre>
+<pre class="r"><code>mean(character)</code></pre>
+<pre><code>## [1] 5.5</code></pre>
+<pre class="r"><code>mean(factor)</code></pre>
+<pre><code>## Warning in mean.default(factor): argument is not numeric or logical: returning
+## NA</code></pre>
+<pre><code>## [1] NA</code></pre>
+<p>Both the logical and character variables yielded a numerical mean
+value, and the vector variable yielded a “NA” because I particularly
+assigned them non-numerical categories that ranged “low” “avg” and
+“high”.</p>
 </div>
 
 

@@ -67,12 +67,25 @@ mean(plot_df[["vec_character_length"]])
 mean(plot_df[["vec_factor"]])
 ```
 
+Taking the mean works for all the elements except for `vector character length` and `vector factor`because they are character variables and not numeric. . 
+
+Writing a code chunk using as.numeric to convert character variables into numeric. 
+
+```{r}
+logical = as.numeric(plot_df[["sample"]])
+character = as.numeric(plot_df[["vec_character_length"]])
+Factor = as.numeric(plot_df[["vec_factor"]])
+
 ```
-Taking the mean works for all the elements except for `vector character length` and `vector factor`. 
 
+Taking the mean of them again to test if the as.numeric function worked: 
+```{r}
+mean(logical)
+mean(character)
+mean(factor)
+```
 
-
-
+Both the logical and character variables yielded a numerical mean value, and the vector variable yielded a "NA" because I particularly assigned them non-numerical categories that ranged "low" "avg" and "high". 
 
 
 
